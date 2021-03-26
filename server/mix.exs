@@ -47,6 +47,7 @@ defmodule Events.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:cors_plug, "~> 2.0"},
       {:argon2_elixir, "~> 2.0"},
+      {:not_qwerty123, "~> 2.2"}
     ]
   end
 
