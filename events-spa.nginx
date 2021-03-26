@@ -6,7 +6,7 @@ server {
 
      root /home/events-spa/events-spa;
 
-     index web-ui/build/index.html;    
+     index /web-ui/build/index.html;    
 
      location / {
  	try_files $uri /index.html;
