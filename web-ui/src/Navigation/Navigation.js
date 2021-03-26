@@ -52,24 +52,25 @@ const LoginForm = () => {
   return (
     <div className="toolbar" style={{ float: 'right' }}>
       <Form onSubmit={on_submit} inline>
-        <Form.Control name="email"
-          type="text"
-          onChange={(ev) => setEmail(ev.target.value)}
-          value={email}
-          placeholder="Email" />
-        <Form.Control name="password"
-          type="password"
-          onChange={(ev) => setPass(ev.target.value)}
-          value={pass}
-          placeholder="Password" />
-        <Button variant="primary" type="submit">
-          Login
+        <Form.Group>
+          <Form.Control name="email"
+            type="text"
+            onChange={(ev) => setEmail(ev.target.value)}
+            value={email}
+            placeholder="Email" />
+          <Form.Control name="password"
+            type="password"
+            onChange={(ev) => setPass(ev.target.value)}
+            value={pass}
+            placeholder="Password" />
+          <Button variant="primary" type="submit">
+            Login
         </Button>
-        <Button variant="outline-primary">
-          <Link style={{float: 'right'}} to={'/users/new'}>
+          <Link style={{ float: 'right' }} to={'/users/new'}>
             Register
           </Link>
-        </Button>
+        </Form.Group>
+
       </Form>
     </div>
 
