@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from 'react-bootstrap';
+import { Switch, Route } from 'react-router-dom';
+
+import Users from './Users/Users';
+import UserForm from './Users/UserForm';
+import Feed from './Feed/Feed';
+import Post from './Feed/Post/Post';
+import PostForm from './Feed/Post/PostForm';
+import Navigation from "./Navigation/Navigation";
+
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{paddingTop: '50px'}}>
+      <Navigation />
+      <br />
+      <Switch>
+        <Route path="/" exact>
+          <Feed />
+        </Route>
+        <Route path="/users" exact>
+          <Users />
+        </Route>
+        <Route path="/users/new" >
+          <UserForm />
+        </Route>
+        <Route path="/users/:id/edit" >
+          <UserForm />
+        </Route>
+        <Route path="/posts/new">
+          <PostForm />
+        </Route>
+        <Route path="/posts/:id/edit" exact>
+          <PostForm />
+        </Route>
+        <Route path="/posts/:id" exact>
+          <Post />
+        </Route>
+      </Switch>
+    </Container>
   );
 }
 

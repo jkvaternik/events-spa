@@ -20,9 +20,16 @@ defmodule EventsWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", EventsWeb do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", EventsWeb do
+    pipe_through :api
+
+    resources "/users", UserController, except: [:new, :edit]
+    resources "/posts", PostController, except: [:new, :edit]
+    resources "/comments", CommentController, except: [:new, :edit]
+    resources "/invites", InviteController, except: [:new, :edit]
+    resources "/session", SessionController, only: [:create]
+
+  end
 
   # Enables LiveDashboard only for development
   #
