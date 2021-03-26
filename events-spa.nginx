@@ -4,7 +4,7 @@ server {
 
      server_name events-spa.jk-web.site;
 
-     root /home/events-spa/www/events-spa;
+     root /home/events-spa/events-spa;
 
      index web-ui/build/index.html;    
 
