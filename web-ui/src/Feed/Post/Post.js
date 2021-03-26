@@ -83,7 +83,7 @@ const Post = ({ session }) => {
       </Row>
     </div>)
     : 
-    null
+    <h4>You must be logged in or invited to view this event. Please contact the owner to invite you.</h4>
   
 }
 

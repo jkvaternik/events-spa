@@ -41,9 +41,12 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
+  const history = useHistory()
+
   function on_submit(ev) {
     ev.preventDefault();
     api_login(email, pass);
+    history.push('/');
   }
 
   return (
