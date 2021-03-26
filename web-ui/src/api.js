@@ -1,7 +1,11 @@
 import store from './store';
 
+const url = process.env.NODE_ENV === 'production' ? 'http://events-spa.jk-web.site/api/v1' : 'http://localhost:4000/api/v1';
+
+console.log(url);
+
 async function api_get(path) {
-  let text = await fetch("http://localhost:4000/api/v1" + path, {});
+  let text = await fetch(url + path, {});
     let resp = await text.json();
     return resp.data;
 }
@@ -20,7 +24,7 @@ async function api_post(path, data) {
   };
 
   let text = await fetch(
-    "http://localhost:4000/api/v1" + path, opts);
+    url + path, opts);
   return await text.json();
 }
 
@@ -37,7 +41,7 @@ async function api_patch(path, data) {
     body: JSON.stringify(data),
   };
   let text = await fetch(
-    "http://localhost:4000/api/v1" + path, opts);
+    url + path, opts);
   return await text.json();
 }
 
@@ -53,7 +57,7 @@ async function api_delete(path, data) {
   };
   
   return await fetch(
-    "http://localhost:4000/api/v1" + path, opts);
+    url + path, opts);
 }
 
 export function fetch_users() {
