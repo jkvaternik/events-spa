@@ -1,0 +1,14 @@
+[Unit]
+ Description=HW Events SPA
+
+ [Service]
+ Type=simple
+ User=events-spa
+ Group=events-spa
+ Restart=on-failure
+ Environment=LANG=en_US.UTF-8
+
+ WorkingDirectory=/home/events-spa/events-spa/server
+ ExecStart=/bin/bash /home/events-spa/events-spa/server/_build/prod/rel/server/bin/server start
+ [Install]
+ WantedBy=multi-user.target
