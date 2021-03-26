@@ -28,18 +28,20 @@ const PostCard = ({ op, post }) => {
             {post.desc}
           </Card.Text>
           {op ?
-            <Button
-              onClick={() => deleteHandler(post.id)}
-              variant="link"
-              style={{ float: "right" }}>
-              Delete
-          </Button> : null}
-          <Link
-            to={`/posts/${post.id}/edit`}
-            className="btn btn-link"
-            style={{ float: "right" }}>
-            Edit
+            <div>
+              <Button
+                onClick={() => deleteHandler(post.id)}
+                variant="link"
+                style={{ float: "right" }}>
+                Delete
+          </Button>
+              <Link
+                to={`/posts/${post.id}/edit`}
+                className="btn btn-link"
+                style={{ float: "right" }}>
+                Edit
           </Link>
+            </div> : null}
           <Link
             to={`/posts/${post.id}`}
             className="btn btn-link"
