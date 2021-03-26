@@ -10,5 +10,6 @@
 
  WorkingDirectory=/home/events-spa/events-spa/server
  ExecStart=/bin/bash /home/events-spa/events-spa/server/_build/prod/rel/server/bin/server start
+ 
  [Install]
  WantedBy=multi-user.target
