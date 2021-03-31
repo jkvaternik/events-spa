@@ -37,8 +37,8 @@ defmodule Events.Users.User do
   end
 
   def validate_password(cset, password) do
-    case PasswordStrength.strong_password?("pppp") do
-      {:ok, password} -> cset
+    case PasswordStrength.strong_password?(password) do
+      {:ok, _password} -> cset
       {:error, message} -> add_error(cset, :password, message)
     end
   end
